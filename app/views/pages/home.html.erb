@@ -1,6 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.istockphoto.com/photos/luxurious-master-bedroom-interior-picture-id1266155645?b=1&k=20&m=1266155645&s=170667a&w=0&h=4MO7xShoFyq1pZczWmZy8YQmVh4atZIXF9xXmoPLkeA=);">
   <div class="container">
-    <h1>Do your homework:</h1>
+    <h1 class="text-center "> CHANGE THE PLACE CHAGE THE CULTURE</h1>
+    <br>
+    <br>
+    <h1>Find perfect place for your job:</h1>
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" />
@@ -11,5 +14,21 @@
     <% end %>
   </div>
 </div>
+<div class="container">
+  <div class="cards">
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i2.wp.com/dubai-on.com/wp-content/uploads/2021/02/Amara-Spa-Dubai.jpg?resize=825%2C526&ssl=1)">
+     Massage
+     </div>
+
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.agora-gallery.com/advice/wp-content/uploads/Photo-studio.jpg)">
+       Photoshut
+     </div>
+
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i1.wp.com/www.acousticpixel.co.uk/wp-content/uploads/2018/11/DSF5839-exit-sockets-gone.jpg?fit=3264%2C2131&ssl=1)">
+        Cinema
+     </div>
+  </div>
+</div>
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
