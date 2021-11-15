@@ -7,6 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Space.destroy_all
+
+@user = User.create!(
+  first_name: "Mado",
+  last_name: "Amidor",
+  email: "user@user.com",
+  password: "password",
+  occupation: "student"
+)
 
 50.times do
   Space.create!(
@@ -16,6 +26,6 @@ require 'faker'
     availability: [true, false].sample,
     rating: rand(1..10),
     price: rand(50..350),
-    user_id: rand(61...79)
+    user_id: @user.id
   )
 end
