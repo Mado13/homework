@@ -1,2 +1,28 @@
-<h1>Spaces#show</h1>
-<p>Find me in app/views/spaces/show.html.erb</p>
+<div class="conatiner d-flex justify-content-center align-items-center full-page">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title"><%= @space.name %></h2><br>
+        <h4 class="card-subtitle"><%= @space.description %></h4><br>
+        <p class="card-text"><%= @space.address %></p>
+        <p class=<%= @space.availability ? ' available' : ' unavailable' %>>Available</p>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <p>Space rated: <%= @space.rating %></p>
+        <p><%= @space.price %>€</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+  <%# t.decimal "rating"
+  t.string "workspace_type"
+  t.decimal "price"
+  t.bigint "user_id", null: false
+  t.datetime "created_at", precision: 6, null: false
+  t.datetime "updated_at", precision: 6, null: false
+  t.index ["user_id"], name: "index_spaces_on_user_id"
+  end %>
