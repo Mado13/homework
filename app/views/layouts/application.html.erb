@@ -24,8 +24,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
      <% if current_user %>
+        <li class="nav-item">Welcome, <%= current_user.first_name %></li>
         <li class="nav-item active">
-          <%=  link_to "Log out", new_user_session_path, class: "nav-link" %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete  %>
         </li>
        <!-- <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://lh3.googleusercontent.com/qt6HS-xCVRYnGGwtEQxEDEyZ61JJAokfVG_EiceGyv6OGBUWlqSqvcrmblb5RWXwCX5SCoPH9KJB9uSUgpxxpsemMSntV7Gg_LXc=w600" />
@@ -45,8 +46,8 @@
 
 
   <body>
-    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= yield %>
   </body>
 </html>
