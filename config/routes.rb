@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:owner]
-  resources :dashboards, only: [:show]
+  resource :dashboard, only: [:show]
 
   get "/spaces/:space_id/bookings/:id/receipt" => "bookings#receipt", as: "receipt"
   devise_for :users
