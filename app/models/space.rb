@@ -4,8 +4,8 @@ class Space < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  AMENITIES = ["lock", "monitor", "desk", "mouse", "keyboard", "mirror", "tea", "coffee", "massage table",
-               "parking space", "snacks", "shower", "hairdryer", "vacuum cleaner", "yoga mats", "balcony", "rooftop",
+  AMENITIES = ["lock", "monitor", "desk", "mouse", "keyboard", "mirror", "tea", "coffee", "massage",
+               "parking", "snacks", "shower", "hairdryer", "vacuum cleaner", "yoga mats", "balcony", "rooftop",
                "music player", "toaster", "fridge", "peloton"]
 
   validates :city, :country, :street, :description, :name, presence: true
