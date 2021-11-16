@@ -20,7 +20,12 @@ Space.destroy_all
 
 50.times do
   Space.create!(
-    address: Faker::Address.full_address,
+    #address: Faker::Address.full_address,
+    city: "Amsterdam",
+    country: "Netherlands",
+    street: "Opijnenhof",
+    amenities: "monitor",
+    street_number: rand(1..10),
     description: Faker::Quote.most_interesting_man_in_the_world,
     name: Faker::FunnyName.name,
     availability: [true, false].sample,

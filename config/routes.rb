@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:owner]
-  resources :dashboards, only: [:show]
+  resource :dashboard, only: [:show]
 
   devise_for :users
   root to: 'pages#home'
