@@ -1,6 +1,7 @@
 class Space < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_many :reviews, through: :bookings
 
   AMENITIES = ["lock", "monitor", "desk", "mouse", "keyboard", "mirror", "tea", "coffee", "massage table",
                "parking space", "snacks", "shower", "hairdryer", "vacuum cleaner", "yoga mats", "balcony", "rooftop",

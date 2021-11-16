@@ -59,10 +59,9 @@
     </div>
     <div class="reviews">
       <p><%= @space.name %> Reviews:</p>
-      <h6><%#= link_to "Leave A Review!", new_booking_review_path(@booking), class: "btn btn-primary" %></h6>
-        <%#= @space.reviews.each do |review| %>
-          <p><%#= review %></p>
-        <%# end %>
+        <% @space.reviews.each do |review| %>
+          <p><%= review %></p>
+        <% end %>
     </div>
   </div>
 </div>
