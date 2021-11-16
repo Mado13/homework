@@ -1,6 +1,9 @@
 <div class="container">
   <div class="space-overview-top">
-    <h4><%= @space.name %></h4>
+    <div class="d-flex justify-content-between">
+      <h4><%= @space.name %></h4>
+      <h6><%= link_to "Book this space", new_space_booking_path(@space), class: "btn btn-primary" %></h6>
+    </div>
     <p><%= @space.description %></p>
     <div id="carouselExampleIndicators" class="carousel slide box-shadow" data-ride="carousel">
       <ol class="carousel-indicators">

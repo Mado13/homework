@@ -12,9 +12,17 @@
         <%= f.input :city, label: 'City:' %>
         <%= f.input :country, as: :string %>
       </div>
+<<<<<<< HEAD
         <%= simple_fields_for :amenities do |o| %>
           <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
         <% end %>
+=======
+      <div class="d-flex">
+       <%= simple_fields_for :amenities do |o| %>
+        <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
+       <% end %>
+      </div>
+>>>>>>> master
       <%= f.submit %>
     </div>
   <% end %>
