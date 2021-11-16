@@ -10,7 +10,7 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @user = User.find(@space.user_id)
-    geo_url = "https://api.mapbox.com/geocoding/v5/mapbox.places/Jeruslaem.json?access_token=pk.eyJ1IjoibWFkbzEzIiwiYSI6ImNrdzF3dWxsNjBhNzUyb3BhZDk4bHI1ZW8ifQ.Y7Ctk5-sMRJf1VbQGa0Y_g"
+    geo_url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{@space.city},#{@space.country}.json?access_token=pk.eyJ1IjoibWFkbzEzIiwiYSI6ImNrdzF3dWxsNjBhNzUyb3BhZDk4bHI1ZW8ifQ.Y7Ctk5-sMRJf1VbQGa0Y_g"
     serialized = URI.open(geo_url).read
     @map = JSON.parse(serialized)
     long = @map["features"][0]["center"][0]
@@ -30,7 +30,6 @@ class SpacesController < ApplicationController
     if @space.save
       redirect_to space_path(@space)
     else
-      raise
       render :new
     end
   end

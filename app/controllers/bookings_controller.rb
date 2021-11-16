@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to receipt_path(@space, @booking), notice: "Booking was successful ✨"
     else
-      raise
       render :new
     end
   end

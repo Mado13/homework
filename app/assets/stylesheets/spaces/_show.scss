@@ -38,7 +38,8 @@
 }
 
 .amenities {
-  border-bottom: 2px solid grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .carousel-inner {
