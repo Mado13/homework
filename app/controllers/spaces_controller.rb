@@ -21,4 +21,11 @@ class SpacesController < ApplicationController
 
     @map_url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/#{long},#{lang},11,0/500x300@2x?access_token=pk.eyJ1IjoibWFkbzEzIiwiYSI6ImNrdzF3dWxsNjBhNzUyb3BhZDk4bHI1ZW8ifQ.Y7Ctk5-sMRJf1VbQGa0Y_g"
   end
+
+  def new
+  end
+
+  def create
+  end
+
 end
