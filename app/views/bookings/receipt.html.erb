@@ -1,0 +1,9 @@
+<h1>Hello this is your receipt for: <%= @space.name %></h1>
+
+
+<% total_days = @booking.end_date - @booking.start_date %>
+<p>Price per day: <strong><%= @space.price %></strong> €</p>
+<p>Number of days staying: <strong><%= total_days.to_i %></strong> days</p>
+<p>Total price of stay: <strong><%= @space.price * total_days %></strong> €</p>
+
+<%= link_to "<< Back to Spaces", spaces_path() %>
