@@ -7,6 +7,6 @@
     <%= f.input :start_date, as: :date %>
     <%= f.input :end_date, as: :date %>
     <p><%= "Price per day #{@space.price}"  %></p>
-    <%= f.button :submit, value: "Submit" %>
+    <%= f.button :submit, value: "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
