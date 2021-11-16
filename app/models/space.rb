@@ -8,6 +8,6 @@ class Space < ApplicationRecord
 
   validates :city, :country, :street, :description, :name, presence: true
   validates :price, :street_number, numericality: true, presence: true
-  validates :amenities, inclusion: { in: AMENITIES,
-                                     message: "Choose your amenities"}
+  # validates :amenities, inclusion: { in: AMENITIES,
+  #                                    message: "Choose your amenities"}
 end
