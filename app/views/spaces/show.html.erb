@@ -6,10 +6,10 @@
     <p>🌟 Rating: <%= @space.rating %></p>
   </div>
   <div class="space-body">
-    <p><%= @space.workspace_type %>For Rent By: <%= @user.email %> <%= @space.address %></p>
+    <p><%= @space.workspace_type %>For Rent By: <%= @user.email %></p>
   </div>
   <div class="d-flex justify-content-between center-show">
-    <div style="width: 45%;height:300px;border:1px solid #000;"><img id="map" src="<%= @map_url %>" alt="space map"></div>
+    <div style="width: 45%;height:300px;"><img id="map" src="<%= @map_url %>" alt="space map"></div>
     <div style="width: 45%;height:300px;border:1px solid #000;" class="text-center"><%= @space.availability %></div>
   </div>
   <div class="amenitis">
