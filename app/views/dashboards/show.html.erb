@@ -1,9 +1,13 @@
 <div class="container">
   <div class="d-flex bd-highlight mb-3 ">
     <div class="mr-auto p-2 bd-highlight">
-    <h1>Welcome...</h1>
+    <h1>Welcome <%= current_user.first_name %></h1>
 
     <p>What would you like to do today?</p>
+    <div class="row">
+      <%= link_to "Rent a new place", spaces_path(), class: " btn btn-ghost margin-left=30px " %>
+      <%= link_to "List your place", new_space_path(), class: " btn btn-ghost margin-left=30px " %>
+    </div>
     </div>
     <div class="p-2 bd-highlight">
     <img class="avatar-large flex-column dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://lh3.googleusercontent.com/qt6HS-xCVRYnGGwtEQxEDEyZ61JJAokfVG_EiceGyv6OGBUWlqSqvcrmblb5RWXwCX5SCoPH9KJB9uSUgpxxpsemMSntV7Gg_LXc=w600" />
