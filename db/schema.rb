@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_11_16_092020) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_16_103202) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_11_16_092020) do
   end
 
   create_table "spaces", force: :cascade do |t|
-    t.string "address"
     t.string "description"
     t.string "name"
     t.boolean "availability", default: true
@@ -48,6 +51,14 @@ ActiveRecord::Schema.define(version: 2021_11_16_092020) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
+=======
+    t.string "amenities"
+    t.string "city"
+    t.string "country"
+    t.string "street"
+    t.integer "street_number"
+>>>>>>> master
     t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 
