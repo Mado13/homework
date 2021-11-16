@@ -49,11 +49,20 @@
     <div class="box-shadow" style="width: 45%;height:300px;border:1px solid #000;" class="text-center">Create Booking</div>
   </div>
   <div class="show-bottom">
-    <div class="amenities">
-      <p>Amenitis:</p>
+    <div class="container text-center">
+      <h4>Amenitis:</h4>
+        <div class="amenities">
+          <% @space.amenities.split(" ").each do |amenitie| %>
+            <p><%= amenitie %></p>
+          <% end %>
+        </div>
     </div>
     <div class="reviews">
-      <p>Space Reviews:</p>
+      <p><%= @space.name %> Reviews:</p>
+      <h6><%#= link_to "Leave A Review!", new_booking_review_path(@booking), class: "btn btn-primary" %></h6>
+        <%#= @space.reviews.each do |review| %>
+          <p><%#= review %></p>
+        <%# end %>
     </div>
   </div>
 </div>
