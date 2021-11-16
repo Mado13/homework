@@ -1,4 +1,5 @@
 class Space < ApplicationRecord
+  serialize :amenities
   belongs_to :user
   has_many :bookings
 

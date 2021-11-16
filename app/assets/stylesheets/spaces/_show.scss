@@ -44,7 +44,11 @@
 .carousel-inner {
   height: 100%;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+}
+
+.carousel-item {
+  margin: -150px 0;
 }
 
 .image-carousel {

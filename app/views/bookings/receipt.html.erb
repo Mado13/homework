@@ -6,4 +6,4 @@
 <p>Number of days staying: <strong><%= total_days.to_i %></strong> days</p>
 <p>Total price of stay: <strong><%= @space.price * total_days %></strong> €</p>
 
-<%= link_to "<< Back to Spaces", spaces_path() %>
+<%= link_to "<< Back to Spaces", spaces_path(), class: "btn btn-primary" %>
