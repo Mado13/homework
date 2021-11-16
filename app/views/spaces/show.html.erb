@@ -1,14 +1,18 @@
-<div class="conatiner d-flex justify-content-center align-items-center full-page">
-    <div class="card">
-      <div class="card-body">
-        <h2 class="card-title"><%= @space.name %></h2><br>
-        <h4 class="card-subtitle"><%= @space.description %></h4><br>
-        <p class="card-text"><%= @space.address %></p>
-        <p class=<%= @space.availability ? ' available' : ' unavailable' %>>Available</p>
-      </div>
-      <div class="card-footer d-flex justify-content-between">
-        <p>Space rated: <%= @space.rating %></p>
-        <p><%= @space.price %>€</p>
-      </div>
-    </div>
+<div class="container">
+  <div class="space-overview-top">
+    <h4><%= @space.name %></h4>
+    <p><%= @space.description %></p>
+    <div style="height:300px;border:1px solid #000;" class="text-center">images</div>
+    <p>🌟 Rating: <%= @space.rating %></p>
+  </div>
+  <div class="space-body">
+    <p><%= @space.workspace_type %>For Rent By: <%= @user.email %> <%= @space.address %></p>
+  </div>
+  <div class="d-flex justify-content-between center-show">
+    <div style="width: 45%;height:300px;border:1px solid #000;"><img id="map" src="<%= @map_url %>" alt="space map"></div>
+    <div style="width: 45%;height:300px;border:1px solid #000;" class="text-center"><%= @space.availability %></div>
+  </div>
+  <div class="amenitis">
+    <p>Amenitis:</p>
+  </div>
 </div>
