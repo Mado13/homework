@@ -51,14 +51,11 @@ ActiveRecord::Schema.define(version: 2021_11_16_103202) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-=======
     t.string "amenities"
     t.string "city"
     t.string "country"
     t.string "street"
     t.integer "street_number"
->>>>>>> master
     t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 
