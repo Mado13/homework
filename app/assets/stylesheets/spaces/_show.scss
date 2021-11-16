@@ -16,3 +16,37 @@
 .card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.box-shadow {
+   box-shadow: 0 1px 1px rgba(0,0,0,0.08),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.16),
+                0 8px 8px rgba(0,0,0,0.20);
+}
+
+.space-overview-top {
+  margin-top: 8px;
+}
+
+.center-show {
+  margin-bottom: 16px;
+}
+
+.amenities {
+  border-bottom: 2px solid grey;
+}
+
+.carousel-inner {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-carousel {
+  height: 400px;
+}
