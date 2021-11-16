@@ -2,6 +2,7 @@ require 'open-uri'
 require 'json'
 
 class SpacesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def index
     @spaces = Space.all
   end
@@ -22,6 +23,18 @@ class SpacesController < ApplicationController
   end
 
   def create
+    @space = Space.new(space_params)
+    if @space.save
+      redirect_to space_path(@space)
+    else
+      render :new
+    end
   end
 
+  private
+
+  def space_params
+    params.require(:space).permit(:name, :description, :workspace_type, :price,
+                                       :amenities, :city, :country, :street, :street_number)
+  end
 end
