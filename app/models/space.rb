@@ -6,6 +6,6 @@ class Space < ApplicationRecord
 
   validates :address, :description, :name, presence: true
   validates :price, numericality: true, presence: true
-  validates  :amenities, inclusion: { scope: AMENITIES,
+  validates  :amenities, inclusion: { in: AMENITIES,
     message: "Choose your amenities"}
 end
