@@ -30,8 +30,19 @@
 #   )
 # end
 
-Review.create!(
-  comment: "Bery Bery Bad",
-  rating: 4,
-  booking_id: 1
-)
+50.times do
+  Space.create!(
+    #address: Faker::Address.full_address,
+    city: "Amsterdam",
+    country: "Netherlands",
+    street: "Opijnenhof",
+    amenities: "monitor",
+    street_number: rand(1..10),
+    description: Faker::Quote.most_interesting_man_in_the_world,
+    name: Faker::FunnyName.name,
+    availability: [true, false].sample,
+    rating: rand(1..10),
+    price: rand(50..350),
+    user_id: @user.id
+  )
+end
