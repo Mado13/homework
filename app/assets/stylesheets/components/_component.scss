@@ -1,3 +1,23 @@
+.grid-container {
+  margin-bottom: 100px;
+  justify-content: space-evenly;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card {
+
+}
+
 .container-width {
   width: 100vw;
+}
+
+.text-center {
+  margin-top: 30px;
+  margin-bottom: 65px;
 }
