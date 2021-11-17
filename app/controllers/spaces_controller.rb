@@ -24,14 +24,14 @@ class SpacesController < ApplicationController
       toaster: 'fas fa-bread-slice',
       coffee: 'fas fa-coffee'
     }
-    @markers = @spaces.geocoded.map do |space|
-      {
-        lat: space.latitude,
-        lng: space.longitude
-      }
-    end
     @space = Space.find(params[:id])
     @user = User.find(@space.user_id)
+    @markers = @space.geocode.map do
+      {
+        lat: @space.latitude,
+        lng: @space.longitude
+      }
+    end
   end
 
   def new
@@ -60,7 +60,7 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:name, :description, :workspace_type, :price,
-                                  :address)
+                                  :address, photos: [])
   end
 
   def set_all_spaces

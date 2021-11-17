@@ -3,6 +3,7 @@
   <%= simple_form_for(@space, url: spaces_path, method: :post) do |f| %>
     <div class="form-inputs">
       <%= f.input :name %>
+      <%= f.file_field :photos, multiple: true , label: "Upload space photos" %>
       <%= f.input :description, as: :text %>
       <%= f.input :workspace_type %>
       <%= f.input :price, label: "Price per day:" %>
