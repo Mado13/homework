@@ -37,9 +37,10 @@
   margin-bottom: 16px;
 }
 
-.amenities {
-  border-bottom: 2px solid grey;
-}
+// .amenities {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+// }
 
 .carousel-inner {
   height: 100%;
@@ -53,4 +54,17 @@
 
 .image-carousel {
   height: 400px;
+}
+
+.amenities-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  width: 100%;
+  gap: 20px;
+
+}
+
+.amenities-list i {
+  font-size: 2em;
 }

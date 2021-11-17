@@ -19,6 +19,7 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
+import { initMapbox } from '../plugins/init_mapbox';
 import "bootstrap";
 
 // Internal imports, e.g:
@@ -27,4 +28,5 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
 });
