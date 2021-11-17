@@ -10,7 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-between">
    <%= link_to root_path, class: "navbar-brand" do %>
      <%= image_tag "homework.png" %>
    <% end %>
@@ -21,8 +21,12 @@
      <span class="navbar-toggler-icon"></span>
    </button>
 
+    <div>
+      <%= link_to "Host a space!", new_space_path(), class: "btn" %>
+    </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
      <% if current_user %>
         <li class="nav-item active">Welcome, <%= current_user.first_name %>...</li>
