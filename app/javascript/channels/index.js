@@ -4,5 +4,5 @@
 // const channels = require.context('.', true, /_channel\.js$/)
 // channels.keys().forEach(channels)
 
-// // const spaceprices = space.price
-// // spaceprices.sort(function (a, b) { return a - b });
+// const spaceprices = space.price
+// spaceprices.sort(function (a, b) { return a - b });

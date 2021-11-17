@@ -3,7 +3,7 @@ class Space < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   serialize :amenities
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
   AMENITIES = ["lock", "monitor", "desk", "mouse", "keyboard", "mirror", "tea", "coffee", "massage",
