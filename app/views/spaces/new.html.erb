@@ -6,12 +6,7 @@
       <%= f.input :description, as: :text %>
       <%= f.input :workspace_type %>
       <%= f.input :price, label: "Price per day:" %>
-      <div class="address d-flex justify-content-between">
-        <%= f.input :street_number, label: 'Enter house number:' %>
-        <%= f.input :street, label: 'Enter street:' %>
-        <%= f.input :city, label: 'City:' %>
-        <%= f.input :country, as: :string %>
-      </div>
+      <%= f.input :address, label: 'Enter an address:' %>
       <div class="d-flex">
        <%= simple_fields_for :amenities do |o| %>
         <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
