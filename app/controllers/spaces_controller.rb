@@ -6,12 +6,6 @@ class SpacesController < ApplicationController
   before_action :set_all_spaces, only: [:index, :show]
 
   def index
-     @markers = @spaces.geocoded.map do |space|
-      {
-        lat: space.latitude,
-        lng: space.longitude
-      }
-    end
   end
 
   def show
