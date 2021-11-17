@@ -45,9 +45,11 @@
     <p><%= @space.workspace_type %>For Rent By: <%= @user.email %></p>
   </div>
   <div class="d-flex justify-content-between center-show">
-    <div class="box-shadow" id="map" style="width: 45%; height: 300px;" data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <div class="box-shadow" style="width: 45%;height:300px;border:1px solid #000;" class="text-center">Create Booking</div>
+    <div class="box-shadow" id="map" style="width: 45%; height: 300px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="box-shadow" style="width: 45%;height:300px;border:1px solid #000;"
+          class="text-center"><%= @markers %><%= @space.address %></div>
   </div>
   <div class="show-bottom">
     <div class="container text-center">

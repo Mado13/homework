@@ -3,9 +3,15 @@ require 'json'
 
 class SpacesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :set_all_spaces, only: [:index, :show]
 
   def index
-    @spaces = Space.all
+     @markers = @spaces.geocoded.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude
+      }
+    end
   end
 
   def show
@@ -56,4 +62,9 @@ class SpacesController < ApplicationController
     params.require(:space).permit(:name, :description, :workspace_type, :price,
                                   :address)
   end
+
+  def set_all_spaces
+    @spaces = Space.all
+  end
+
 end
