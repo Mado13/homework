@@ -6,8 +6,8 @@
     </div>
     <p><%= @space.description %></p>
     <div class="container">
-      <div class="row d-flex justify-content-center mt-5">
-        <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 carousel-image">
           <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
             <div class="carousel-inner">
               <div class="carousel-item active"> <img src="https://i.imgur.com/bV1xmG5.jpg" class="rounded"> </div>
@@ -27,8 +27,8 @@
         </div>
       </div>
     </div>
-    <p>🌟 Rating: <%= @space.rating %></p>
   </div>
+    <p>🌟 Rating: <%= @space.rating %></p>
   <div class="space-body">
     <p><%= @space.workspace_type %>For Rent By: <%= @user.email %></p>
   </div>
