@@ -42,18 +42,36 @@
 //   grid-template-columns: 1fr 1fr 1fr;
 // }
 
-.carousel-inner {
-  height: 100%;
-  background-position: center;
-  background-size: contain;
+
+.carousel-inner img {
+    width: 100%
 }
 
-.carousel-item {
-  margin: -150px 0;
+.carousel-item img {
+    width: 320px;
+    height: 240px !important
 }
 
-.image-carousel {
-  height: 400px;
+#myCarousel .carousel-indicators {
+    position: static;
+    margin-top: 0px
+}
+
+#myCarousel .carousel-indicators>li {
+    width: 100px
+}
+
+#myCarousel .carousel-indicators li img {
+    display: block;
+    opacity: 0.5
+}
+
+#myCarousel .carousel-indicators li.active img {
+    opacity: 1
+}
+
+#myCarousel .carousel-indicators li:hover img {
+    opacity: 0.75
 }
 
 .amenities-list {

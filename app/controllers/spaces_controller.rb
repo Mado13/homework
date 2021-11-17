@@ -60,5 +60,4 @@ class SpacesController < ApplicationController
   def set_all_spaces
     @spaces = Space.all
   end
-
 end
