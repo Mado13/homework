@@ -26,6 +26,7 @@ class SpacesController < ApplicationController
     }
     @markers = @spaces.geocoded.map do |space|
       {
+        name: space.name,
         lat: space.latitude,
         lng: space.longitude
       }
