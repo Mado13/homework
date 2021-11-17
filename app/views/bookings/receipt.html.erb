@@ -4,6 +4,7 @@
 <% total_days = @booking.end_date - @booking.start_date %>
 <p>Price per day: <strong><%= @space.price %></strong> €</p>
 <p>Number of days staying: <strong><%= total_days.to_i %></strong> days</p>
-<p>Total price of stay: <strong><%= @space.price * total_days %></strong> €</p>
+<% @booking.total_price = @space.price * total_days %>
+<p>Total price of stay: <strong><%= @booking.total_price %></strong> €</p>
 
 <%= link_to "<< Back to Spaces", spaces_path(), class: "btn btn-primary" %>
