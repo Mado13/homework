@@ -4,7 +4,6 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.string :comment
       t.decimal :rating
       t.references :booking, null: false, foreign_key: true
-
       t.timestamps
     end
   end
