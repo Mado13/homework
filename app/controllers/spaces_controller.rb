@@ -3,13 +3,10 @@ require 'json'
 
 class SpacesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  def index
-    @spaces = Space.all
-  end
+  before_action :set_all_spaces, only: [:index, :show]
 
-  # AMENITIES =  "desk", "mirror",
-  #              , "hairdryer", "vacuum cleaner", "yoga mats", "balcony", "rooftop",
-  #              "fridge"
+  def index
+  end
 
   def show
     @icons = {
@@ -27,6 +24,12 @@ class SpacesController < ApplicationController
       toaster: 'fas fa-bread-slice',
       coffee: 'fas fa-coffee'
     }
+    @markers = @spaces.geocoded.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude
+      }
+    end
     @space = Space.find(params[:id])
     @user = User.find(@space.user_id)
   end
@@ -53,4 +56,9 @@ class SpacesController < ApplicationController
     params.require(:space).permit(:name, :description, :workspace_type, :price,
                                   :address)
   end
+
+  def set_all_spaces
+    @spaces = Space.all
+  end
+
 end
