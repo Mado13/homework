@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  attr_accessor :address
 
   def new
     @user = User.new
