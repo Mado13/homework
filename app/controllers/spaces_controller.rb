@@ -6,6 +6,11 @@ class SpacesController < ApplicationController
   before_action :set_all_spaces, only: [:index, :show]
 
   def index
+    if params[:query]
+      @spaces = Space.search_by_address_and_wrokspace_type(params[:query])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -32,6 +37,7 @@ class SpacesController < ApplicationController
         lng: @space.longitude
       }
     end
+    @booking = Booking.new
   end
 
   def new

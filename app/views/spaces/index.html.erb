@@ -1,19 +1,14 @@
 <div class="container-width">
 
-<div class="header-index">
-  <div class="search-bar">
-    <input type="text" id="myInput" onkeyup="" placeholder="Search for names..">
-  </div>
-  <div id="myBtnContainer">
-      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-      <button class="btn" onclick="filterSelection('ascendingprice')"> Ascending by price</button>
-      <button class="btn" onclick="filterSelection('descendingprice')"> Descending by price</button>
-      <button class="btn" onclick="filterSelection('ascending by rating')"> Ascending by rating</button>
-      <button class="btn" onclick="filterSelection('descending by rating')"> Descending by rating</button>
-  </div>
-  <div>
-    <h1 class="text-center">Spaces available for rent</h1>
-  </div>
+
+<%# <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> %>
+
+<div id="myBtnContainer" class="d-flex container">
+  <button class="btn active"><%= link_to "Show All", controller: "spaces", action: "index" %></button>
+  <% @spaces.each do |space| %>
+  <button
+    class="btn"><%= link_to "#{space.workspace_type}", controller: "spaces", action: "index", query: "#{space.workspace_type}"  %>
+  <% end %>
 </div>
 <div>
     <div class="grid-container">
