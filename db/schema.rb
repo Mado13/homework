@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2021_11_17_221642) do
     t.string "first_name"
     t.string "last_name"
     t.string "occupation"
-    t.boolean "owner"
+    t.boolean "owner", default: false
     t.string "user_name"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
