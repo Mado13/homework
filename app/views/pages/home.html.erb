@@ -1,13 +1,27 @@
 <div  class="container">
   <div  class="grid-home">
-    <h1 class="banner-h1">CHANGE THE WORK SPACE AND THE ALBUM OF MUSIC!</h1>
-    <div class="big1"></div>
+    <div class="big1">
+       <%= form_tag spaces_path, method: :get do %>
+    <div class="mp34 search-form-control form-group">
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search by city or workspace type...", class: "form-control string required" %>
+      <%= button_tag type: 'submit', class: "btn-34 btn btn-primary" do %>
+      <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+    <% end %>
+    </div>
     <div class="m2"></div>
     <div class="b1g2"></div>
     <div class="m4"></div>
-    <div class="f3">    <h1 class="banner-h1">CHANGE THE WORK SPACE AND THE ALBUM OF MUSIC!</h1>
+    <div class="f3">
+      <h1 class="banner-h1">FROM WHERE WOULD YOU LIKE TO WORK TODAY?</h1>
     </div>
-    <div class="d43v"></div>
+    <div class="d43v">
+      <img  style="height: 320px"  src="https://blush.design/api/download?shareUri=XxRzUx4VYQECRNIR&c=Hair_0%7E0f0f0f-0.8%7E9b5120_Skin_0%7Eecafa3-0.8%7Ef6cbc3&w=800&h=800&fm=png" alt="Italian Trulli">
+    </div>
   </div>
   <div class="fb23">
     <div class="fb1"></div>
@@ -17,7 +31,9 @@
   </div>
   <div class="fb23">
     <div class="fb3">
-      <div id="triangle2"></div></div>
+      <div id="triangle2">
+      </div>
+    </div>
     <div class="fb1">
     </div>
   </div>

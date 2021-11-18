@@ -25,8 +25,23 @@
   width: 90%;
   height: 30%;
 }
+.btn-35{
+  margin-bottom: 260px;
+  margin-left: 90px;
+  background-color: #102542;
+  border: none;
+  color: white;
+  font-size: 20px;
+  &:hover{
+  background-color: #102542;
+  border: none;
+  color: white;
+  font-size: 25px;
+  }
+}
 
 .banner-h1 {
+  margin-left: 10px;
   z-index: 100;
   position: relative;
   grid-area: 1 / 1 / 2 / 4;
@@ -99,7 +114,29 @@
   grid-area: 3 / 1 / 4 / 4;
   background-color: #102542;
   border-radius: 25px;
-  height: 130px;
+  height: 160px;
+  display: flex;
+  justify-content: space-around;
+}
+.mp34 {
+  width: 500px;
+  input {
+    border-radius: 25px;
+    filter: drop-shadow(2px 2px 10px rgba(0,0,0,0.3));
+
+  }
+}
+.btn-34 {
+  background-color: white;
+  border: none;
+  color: #102542;
+  font-size: 20px;
+  &:hover{
+  background-color: white;
+  border: none;
+  color: #102542;
+  font-size: 25px;
+  }
 }
 .m2 {
   grid-area: 3 / 2 / 4 / 4;
