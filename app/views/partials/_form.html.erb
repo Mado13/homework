@@ -1,19 +1,27 @@
-<%= simple_form_for(@space, url: spaces_path, method: :post) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name, label: false, placeholder: "Space name" %>
-    <%= f.input :photos, multiple: true , label: "Upload space photos (please choose 3)" %>
-    <%= f.input :description, as: :text, label: false, placeholder: "Write a little description" %>
-    <%= f.input :workspace_type, label: false, placeholder: "What job is the space suited for (please create 1 per space)" %>
-    <%= f.input :price, label: false, placeholder: "price per day (in euros)" %>
-    <%= f.input :address, label: false, placeholder: "Please enter the address" %>
-    <div class="d-flex">
-      <%= simple_fields_for :amenities do |o| %>
-      <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
-      <% end %>
+<div class="conatiner create-form">
+  <%= simple_form_for(@space, url: spaces_path, method: :post) do |f| %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :name, label: false, placeholder: "Space name", class: "rounded" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :workspace_type, label: false, placeholder: "Workspace type - please choose one" %>
+        </div>
+      </div>
+      <%= f.input :description, as: :text, label: false, placeholder: "Write a little description" %>
+      <%= f.input :price, label: false, placeholder: "price per day (in euros)" %>
+      <%= f.input :address, label: false, placeholder: "Please enter the address" %>
+      <%= f.input :photos, multiple: true , label: "Upload space photos (please choose 3)" %>
+      <div class="d-flex">
+        <%= simple_fields_for :amenities do |o| %>
+        <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-between">
+        <%= f.submit %>
+        <p><%= link_to "Not the page i was looking for", spaces_path, class: "back-button" %></p>
+      </div>
     </div>
-    <div class="d-flex justify-content-between">
-      <%= f.submit %>
-      <p><%= link_to "Not the page i was looking for", spaces_path, class: "back-button" %></p>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
