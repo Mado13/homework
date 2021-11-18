@@ -10,14 +10,39 @@
 User.destroy_all
 Space.destroy_all
 
-@user = User.create!(
-  first_name: "Mado",
-  last_name: "Amidor",
-  email: "user@user.com",
-  password: "password",
-  occupation: "student"
-)
+puts "Creating user seed..."
+i = 0
+10.times do
+  i += 1
+  @user = User.create!(
+    first_name: %w(Matan Gabriel Johannes Aleksa Robert Albert).sample,
+    last_name:  %w(Amidor DeVuyst Burchard Mikic Kutt Auge).sample,
+    email: "user#{i}@user.com",
+    password: "password",
+    occupation: %w(Full Stack Developer Masseur Hair Dresser Designer Designer Engineer).sample,
+    user_name: "tr4v3ll3r#{i}"
+  )
+  puts "Created user #{@user.id} - #{@user.first_name}"
+end
+puts "Created #{i} users"
 
+s = 0
+puts "Creating spaces..."
+20.times do
+  user_id = rand(1..10)
+  s += 1
+  @space = Space.create!(
+    address: ["Portland, United States", "Amsterdam, Netherlands", "Brussels, Belgium", "Melbourne, Australia", "Frankfurt, Germany", "Jerusalem, Israel"].sample,
+    description: ["Fantanstic place to do some homeworking", "Great place to do some design", "Perfect place for mobile hairdressers", "Sit back and relax"].sample,
+    name: ["The Space", "Work Finisher", "The Freelancer", "The Vivid", "Relaxer", "Stylishings"].sample,
+    availability: true,
+    rating: rand(6..10),
+    price: rand(10..35),
+    user_id: user_id
+  )
+  puts "Created space - #{@space.id}"
+end
+puts "Created #{s} spaces"
 # 50.times do
 #   Space.create!(
 #     address: "Portland, Oregon",
