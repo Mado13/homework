@@ -32,6 +32,7 @@ class SpacesController < ApplicationController
         lng: @space.longitude
       }
     end
+    @booking = Booking.new
   end
 
   def new
