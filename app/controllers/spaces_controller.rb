@@ -6,6 +6,11 @@ class SpacesController < ApplicationController
   before_action :set_all_spaces, only: [:index, :show]
 
   def index
+    if params[:query]
+      @spaces = Space.search_by_address(params[:query])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -32,12 +37,6 @@ class SpacesController < ApplicationController
         lng: @space.longitude
       }
     end
-    # @disabled_dates = @space.bookings.map do |booking|
-    #   {
-    #     from: booking.start_date.strftime("%Y-%m-%d"),
-    #     to: booking.end_date.strftime("%Y-%m-%d")
-    #   }
-    # end
     @booking = Booking.new
   end
 

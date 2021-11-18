@@ -7,6 +7,7 @@ class Space < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
+
   AMENITIES = ["lock", "monitor", "desk", "mouse", "keyboard", "mirror", "tea", "coffee", "massage",
                "parking", "snacks", "shower", "hairdryer", "vacuum cleaner", "yoga mats", "balcony", "rooftop",
                "music player", "toaster", "fridge", "peloton"]
