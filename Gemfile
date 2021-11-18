@@ -43,10 +43,12 @@ gem 'cloudinary', '~> 1.16.0'
 
 gem 'pg_search', '~> 2.3.0'
 
+gem 'nokogiri'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
+
 
 
 
