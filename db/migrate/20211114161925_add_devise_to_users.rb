@@ -10,7 +10,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :occupation
 
-      t.boolean :owner
+      t.boolean :owner, default: false
       t.string :user_name
 
       ## Recoverable
