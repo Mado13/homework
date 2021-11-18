@@ -1,22 +1,6 @@
 <div class="container">
   <h1>Create new Listing:</h1>
-  <%= simple_form_for(@space, url: spaces_path, method: :post) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.file_field :photos, multiple: true , label: "Upload space photos" %>
-      <%= f.input :description, as: :text %>
-      <%= f.input :workspace_type %>
-      <%= f.input :price, label: "Price per day:" %>
-      <%= f.input :address, label: 'Enter an address:' %>
-      <div class="d-flex">
-       <%= simple_fields_for :amenities do |o| %>
-        <%= o.input :amenities, as: :check_boxes, collection: Space::AMENITIES, include_hidden: false, label: 'What amenities you space offer:' %>
-       <% end %>
-      </div>
-      <%= f.submit %>
-    </div>
-  <% end %>
+   <%= render partial: "partials/form" %>
   <br>
   <br>
-  <p><i class="fas fa-backspace"></i><%= link_to "Nevermind, Go Back", spaces_path() %></p>
 </div>
