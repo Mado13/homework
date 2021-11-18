@@ -3,7 +3,8 @@
 
 <%# <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> %>
 
-<div id="myBtnContainer d-flex">
+<div id="myBtnContainer" class="d-flex container">
+  <button class="btn active"><%= link_to "Show All", controller: "spaces", action: "index" %></button>
   <% @spaces.each do |space| %>
   <button
     class="btn"><%= link_to "#{space.workspace_type}", controller: "spaces", action: "index", query: "#{space.workspace_type}"  %>
