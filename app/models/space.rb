@@ -13,6 +13,11 @@ class Space < ApplicationRecord
 
   validates :address, :description, :name, presence: true
   validates :price, numericality: true, presence: true
-  # validates :amenities, inclusion: { in: AMENITIES,
-  #                                    message: "Choose your amenities"}
+
+  include PgSearch::Model
+  pg_search_scope :search_by_address,
+    against: [ :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

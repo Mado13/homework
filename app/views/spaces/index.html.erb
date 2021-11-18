@@ -1,4 +1,12 @@
 <div class="container-width">
+<%= form_tag spaces_path, method: :get do %>
+<%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "What city are you planning to work from?"
+  %>
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
