@@ -2,3 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
+.back-button {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  border: 1px solid black;
+}

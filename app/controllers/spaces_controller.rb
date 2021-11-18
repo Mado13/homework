@@ -7,7 +7,7 @@ class SpacesController < ApplicationController
 
   def index
     if params[:query]
-      @spaces = Space.search_by_address(params[:query])
+      @spaces = Space.search_by_address_and_wrokspace_type(params[:query])
     else
       @spaces = Space.all
     end

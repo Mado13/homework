@@ -16,8 +16,8 @@ class Space < ApplicationRecord
   validates :price, numericality: true, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_address,
-    against: [ :address ],
+  pg_search_scope :search_by_address_and_wrokspace_type,
+    against: [ :address, :workspace_type ],
     using: {
       tsearch: { prefix: true }
     }
