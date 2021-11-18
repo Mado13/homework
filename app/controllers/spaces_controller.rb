@@ -32,6 +32,12 @@ class SpacesController < ApplicationController
         lng: @space.longitude
       }
     end
+    # @disabled_dates = @space.bookings.map do |booking|
+    #   {
+    #     from: booking.start_date.strftime("%Y-%m-%d"),
+    #     to: booking.end_date.strftime("%Y-%m-%d")
+    #   }
+    # end
     @booking = Booking.new
   end
 
