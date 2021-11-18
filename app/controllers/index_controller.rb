@@ -1,9 +1,5 @@
 class IndexController < ApplicationController
   def index
-    if params[:query].present?
-      @spaces = Space.where(name: params[:query])
-    else
-      @spaces = Space.all
-    end
+    @space = Space.all
   end
 end

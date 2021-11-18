@@ -37,19 +37,13 @@
   margin-bottom: 16px;
 }
 
-// .amenities {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-// }
-
-
 .carousel-inner img {
     width: 100%
 }
 
-.carousel-item img {
-    width: 320px;
-    height: 240px !important
+.carousel-inner img {
+  width: 100%;
+  height: 450px;
 }
 
 #myCarousel .carousel-indicators {
@@ -67,7 +61,7 @@
 }
 
 #myCarousel .carousel-indicators li.active img {
-    opacity: 1
+    opacity: 1;
 }
 
 #myCarousel .carousel-indicators li:hover img {

@@ -6,6 +6,11 @@ class SpacesController < ApplicationController
   before_action :set_all_spaces, only: [:index, :show]
 
   def index
+    if params[:query]
+      @spaces = Space.search_by_address_and_wrokspace_type(params[:query])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -24,14 +29,15 @@ class SpacesController < ApplicationController
       toaster: 'fas fa-bread-slice',
       coffee: 'fas fa-coffee'
     }
-    @markers = @spaces.geocoded.map do |space|
-      {
-        lat: space.latitude,
-        lng: space.longitude
-      }
-    end
     @space = Space.find(params[:id])
     @user = User.find(@space.user_id)
+    @markers = @space.geocode.map do
+      {
+        lat: @space.latitude,
+        lng: @space.longitude
+      }
+    end
+    @booking = Booking.new
   end
 
   def new
@@ -60,7 +66,7 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:name, :description, :workspace_type, :price,
-                                  :address)
+                                  :address, photos: [])
   end
 
   def set_all_spaces
