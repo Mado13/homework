@@ -25,13 +25,38 @@
   </div>
   <div class="fb23">
     <div class="fb1"></div>
-    <div class="fb2">
-      <div id="triangle"></div>
+    <div class="fb2 d-flex">
+      <div id="triangle">
+          <% if current_user %>
+            <%= link_to  spaces_path, type: 'submit', class: "" do %>
+            <button class="btn-38">Book</button>
+              <% end %>
+          <% else %>
+            <%= link_to  new_user_session_path, type: 'submit', class: "" do %>
+            <button class="btn-38">Book</button>
+            <% end %>
+          <% end %>
+      </div>
+      <img  class="img-37" src="https://blush.design/api/download?shareUri=P-So76N9u_1H3Rau&c=Hair_0%7E3164cf_Rainbow_0%7Eff89d4_Skin_0%7Eb02d1c&w=800&h=800&fm=png" alt="">
     </div>
   </div>
   <div class="fb23">
-    <div class="fb3">
+    <div >
+    </div>
+    <div class="fb3 d-flex ">
+      <img  class="img-38" src="https://blush.design/api/download?shareUri=sNgscyXxvXfhnv-D&c=Hair_0%7E372310-0.4%7Ead3409_Skin_0%7E673a18-0.4%7Ef4d4b8&w=800&h=800&fm=png" alt="">
       <div id="triangle2">
+        <div class=" search-form-control form-group">
+        <% if current_user %>
+            <%= link_to  new_space_path, type: 'submit', class: "" do %>
+            <button class="btn-37">Host</button>
+          <% end %>
+        <% else %>
+          <%= link_to  new_user_session_path, type: 'submit', class: "" do %>
+            <button class="btn-37">Host</button>
+          <% end %>
+        <% end %>
+        </div>
       </div>
     </div>
     <div class="fb1">
