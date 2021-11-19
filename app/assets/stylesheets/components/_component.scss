@@ -222,13 +222,14 @@ html * {
 
 
 .user-avatar img {
-  height: 75px;
-  width: auto;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   border-style: solid;
   border-width: 1px;
-  margin-right: 20px;
+  margin-right: 35px;
   margin-top: 20px;
+  object-fit: cover;
 }
 
 .card-button {
