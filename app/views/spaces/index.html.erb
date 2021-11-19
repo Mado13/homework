@@ -28,7 +28,8 @@
                       <p>Price: <%= space.price %>€</p>
                     </div>
                   </div>
-                  <div class="user-avatar align-content-center"><img src="https://www.allthetests.com/quiz22/picture/pic_1171831236_1.png?1592828498" alt="">
+                  <% profile_pic = ['https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://thumbs.dreamstime.com/b/profile-picture-vector-perfect-social-media-other-web-use-125320944.jpg', 'https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80', 'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg','https://image.shutterstock.com/image-vector/no-user-profile-picture-hand-260nw-99335579.jpg'] %>
+                  <div class="user-avatar align-content-center"><%= image_tag profile_pic.sample %>
                   </div>
                 </div>
                 <div class="d-flex justify-content-center">

@@ -3,7 +3,7 @@
     <div class="form-inputs">
       <div class="row">
         <div class="col-md-6">
-          <%= f.input :name, label: false, placeholder: "Space name", class: "rounded" %>
+          <%= f.input :name, label: false, placeholder: "Space name", class: "form-round-radius" %>
         </div>
         <div class="col-md-6">
           <%= f.input :workspace_type, label: false, placeholder: "Workspace type - please choose one" %>
@@ -19,8 +19,8 @@
         <% end %>
       </div>
       <div class="d-flex justify-content-between">
-        <%= f.submit %>
-        <p><%= link_to "Not the page i was looking for", spaces_path, class: "back-button" %></p>
+          <%= f.submit %>
+        <p><%= link_to "Go back", spaces_path, class: "card-button" %></p>
       </div>
     </div>
   <% end %>

@@ -1,0 +1,30 @@
+.form-round-radius {
+  border-radius: 15px;
+}
+
+
+.button-go-back {
+  background-color: #EFEFEF;
+  opacity: 0.55;
+  color: white;
+  border-radius: 30px;
+  border-style: none;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  font-size: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
+  transition-duration: 0.3s;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.button-go-back:hover {
+  background-color: #EFEFEF;
+  opacity: 1;
+  color: white;
+}
