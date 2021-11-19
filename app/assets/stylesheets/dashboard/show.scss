@@ -1,43 +1,49 @@
 #dashboard-card {
-  width: 70%;
-  background-color: #B3A394;
-}
+    width: 70%;
+    background-color: #B3A394;
+    height: 100%;
+  }
 
-#personal-card {
-  width: 70%;
-  background-color: #B3A394;
-}
+  #personal-card {
+    width: 70%;
+    background-color: #B3A394;
+    overflow-x: hidden;
+    height: 100%;
+  }
 
-.card h1 {
-  padding-top: 45px;
-}
 
-#review-button {
-  border-radius: 10px;
-}
+  .active{
+    font-weight: bold;
+  }
+  .navs123{
+    background-color: transparent !important;
+    border: none !important;
+  }
+  #review-button {
+    border-radius: 10px;
+  }
 
-#review-button:hover {
-  background-color: #F87060;
-  transition: 0.5s;
-}
+  #review-button:hover {
+    background-color: #F87060;
+    transition: 0.5s;
+  }
 
-#review-button:visited {
-  border: none;
-}
+  #review-button:visited {
+    border: none;
+  }
 
-.modal-content {
-  background-color: #B3A394;
-  text-align: center;
-}
+  .modal-content {
+    background-color: #B3A394;
+    text-align: center;
+    border-radius: 25px;
+  }
 
-.dashboard-info {
-  padding-bottom: 8px;
-}
-
-.modal{
-  border-radius: 20px;
-}
-.h1-topassadina{
-  padding: 0;
-}
-
+  .dashboard-info {
+    padding-bottom: 8px;
+  }
+  .modal{
+    border-radius: 20px;
+  }
+  .h1-topassadina{
+    padding: 0;
+  }
