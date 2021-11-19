@@ -1,19 +1,19 @@
+<div class="d-flex justify-content-between space-title-show">
+  <h1 class="container"><%= @space.name %></h1>
+</div>
 <div class="container">
   <div class="space-overview-top">
-    <div class="d-flex justify-content-between">
-      <h4><%= @space.name %></h4>
-    </div>
-    <p><%= @space.description %></p>
+    <p class="space-description"><em><%= @space.description %><em></p>
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-md-12 carousel-image">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" text-align="center">
             <div class="carousel-inner">
-              <div class="carousel-item active"> <%= image_tag @space.photos.first, class: "rounded" %> </div>
-              <div class="carousel-item"> <%= image_tag @space.photos.second, class: "rounded" %> </div>
-              <div class="carousel-item"> <%= image_tag @space.photos.last, class: "rounded" %> </div>
-              </div>
-            <ol class="carousel-indicators list-inline">
+              <div class="carousel-item active"> <%= image_tag @space.photos.first, class: "img-carrousel" %> </div>
+              <div class="carousel-item"> <%= image_tag @space.photos.second, class: "img-carrousel" %> </div>
+              <div class="carousel-item"> <%= image_tag @space.photos.last, class: "img-carrousel" %> </div>
+            </div>
+            <ol class="carousel-indicators list-inline pic-container">
               <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0"
                   data-target="#myCarousel"> <%= image_tag @space.photos.first, class: "img-fluid rounded" %> </a>
               </li>
