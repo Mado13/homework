@@ -304,3 +304,48 @@ html * {
 .footer-icons {
   width: 250px;
 }
+
+.form-control {
+  border-radius: 25px;
+}
+
+.button-bookspace {
+  background-color: #f87060;
+  color: black;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  border-style: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
+  height: 40px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-left: 27px;
+}
+
+.button-bookspace:hover {
+  background-color: #102542;
+  color: white;
+}
+
+.box-cal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.simple_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.form-control {
+  width: 250px;
+}
