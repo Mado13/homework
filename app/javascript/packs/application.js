@@ -20,6 +20,7 @@ ActiveStorage.start()
 // External imports
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initStarRating } from '../plugins/init_star_rating';
 import "bootstrap";
 
 // Internal imports, e.g:
@@ -30,4 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initFlatpickr();
+  initStarRating();
 });
