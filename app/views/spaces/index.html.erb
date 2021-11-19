@@ -3,7 +3,7 @@
 
 <%# <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> %>
 
-<div id="myBtnContainer" class="d-flex">
+<div id="myBtnContainer" class="d-flex align-items-center justify-content-between">
   <button class="button-show-all filters active"><%= link_to "Show All", controller: "spaces", action: "index" %></button>
   <% @spaces.each do |space| %>
   <button
