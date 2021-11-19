@@ -10,28 +10,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-between">
-   <%= link_to root_path, class: "navbar-brand" do %>
-     <%= image_tag "homework.png" %>
+  <div class=" navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-between">
+    <div  class="toggle">
+   <%= link_to root_path, class: "navbar-brand " do %>
+     <%= image_tag "homework.png"  %>
    <% end %>
-
+    </div>
    <button class="navbar-toggler" type="button" data-toggle="collapse"
            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
            aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
 
-    <div>
-      <%= link_to "Host a space!", new_space_path(), class: "btn" %>
-    </div>
-
-
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+    <div class=" navbar collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
      <% if current_user %>
         <!--<li class="nav-item active">Welcome, <%= current_user.first_name %>...</li>
         -->
-        <li class="nav-item active">
+        <li class="nav-item active" >
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
         <li class="nav-item active">
@@ -42,10 +38,10 @@
         </li>
         -->
       <% else %>
-        <li class="nav-item active">
+        <li style=""class="nav-item active">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" >
          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
@@ -54,7 +50,7 @@
   </div>
 
 
-  <body>
+  <body style="background-color:#cdd7d6">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
