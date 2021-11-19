@@ -1,24 +1,17 @@
 #dashboard-card {
   width: 70%;
   background-color: #B3A394;
-  height: 100%;
 }
 
 #personal-card {
   width: 70%;
   background-color: #B3A394;
-  overflow-x: hidden;
-  height: 100%;
 }
 
+.card h1 {
+  padding-top: 45px;
+}
 
-.active{
-  font-weight: bold;
-}
-.navs123{
-  background-color: transparent !important;
-  border: none !important;
-}
 #review-button {
   border-radius: 10px;
 }
@@ -35,15 +28,16 @@
 .modal-content {
   background-color: #B3A394;
   text-align: center;
-  border-radius: 25px;
 }
 
 .dashboard-info {
   padding-bottom: 8px;
 }
+
 .modal{
   border-radius: 20px;
 }
 .h1-topasdina{
   padding: 0;
 }
+

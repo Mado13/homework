@@ -10,13 +10,16 @@
       <div class="modal-body">
           <%= simple_form_for [@booking, @review], url: booking_reviews_path(booking), method: "POST" do |f|  %>
           <div class="form-group">
-            <%= f.text_area :comment, style: "width:90%; border-radius:15px", class: "p-2", placeholder: "Write your review here..." %>
+            <%= f.text_area :comment, placeholder: "Write your review here..." %>
             <%= f.input :rating, collection: (1..10).to_a, label: "Rate your experience" %>
-          <%= f.submit "Leave", class: "card-button btn btn-primary align-items-center", style: "  margin: 0 auto" %>
+          <%= f.submit "Leave" %>
           <% end %>
           </div>
       </div>
-
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
     </div>
   </div>
 </div>
