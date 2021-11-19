@@ -1,17 +1,18 @@
 <div class="container">
   <div class="space-overview-top">
     <div class="d-flex justify-content-between">
-      <h4><%= @space.name %></h4>
+      <h3><%= @space.name %></h3>
+      <h6><%= link_to "Book space", new_space_booking_path(@space), class: "card-button" %></h6>
     </div>
     <p><%= @space.description %></p>
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-md-12 carousel-image">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" text-align="center">
             <div class="carousel-inner">
-              <div class="carousel-item active"> <%= image_tag @space.photos.first, class: "rounded" %> </div>
-              <div class="carousel-item"> <%= image_tag @space.photos.second, class: "rounded" %> </div>
-              <div class="carousel-item"> <%= image_tag @space.photos.last, class: "rounded" %> </div>
+              <div class="carousel-item active"> <%= image_tag @space.photos.first %> </div>
+              <div class="carousel-item"> <%= image_tag @space.photos.second %> </div>
+              <div class="carousel-item"> <%= image_tag @space.photos.last %> </div>
               </div>
             <ol class="carousel-indicators list-inline">
               <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0"
