@@ -125,14 +125,8 @@ html * {
   opacity: 1;
   color: white;
   border-radius: 30px;
-<<<<<<< HEAD
-  border-style: solid;
-  border-width: 1px;
-  border-color: #102542;
-=======
   border-style: none;
   border: 2px solid #102542;
->>>>>>> master
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 20px;
@@ -183,19 +177,11 @@ html * {
 }
 
 #myBtnContainer {
-<<<<<<< HEAD
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-  margin: 10px 200px 10px 200px;
-=======
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px 50px 10px 50px;
->>>>>>> master
 }
-
 
 
 .card {
@@ -313,4 +299,8 @@ html * {
 
 .fab:hover {
   color: #f87060;
+}
+
+.footer-icons {
+  width: 250px;
 }
