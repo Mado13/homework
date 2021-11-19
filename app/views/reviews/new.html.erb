@@ -1,7 +1,0 @@
-<div class="">
-  <%= simple_form_for [@booking, @review] do |f|  %>
-    <%= f.text_area :comment, placeholder: "Write you review here..." %>
-    <%= f.input :rating, collection: (1..10).to_a, label: "Rate your experience" %>
-    <%= f.submit %>
-  <% end %>
-</div>
