@@ -8,15 +8,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <%= simple_form_for [@booking, @review], url: booking_reviews_path(booking),  method: "post" do |f|  %>
+          <%= simple_form_for [@booking, @review], url: booking_reviews_path(booking), method: "POST" do |f|  %>
           <div class="form-group">
-            <%= f.text_area :comment, placeholder: "Write you review here..." %>
+            <%= f.text_area :comment, placeholder: "Write your review here..." %>
             <%= f.input :rating, collection: (1..10).to_a, label: "Rate your experience" %>
-          </div>
-          <%= f.submit %>
+          <%= f.submit "Leave" %>
           <% end %>
-        </form>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

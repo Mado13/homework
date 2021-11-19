@@ -1,91 +1,96 @@
-<div class="container">
-  <div class="d-flex bd-highlight mb-3 ">
-    <div class="mr-auto p-2 bd-highlight">
-    <h1>Welcome <%= current_user.first_name %></h1>
-
-    <p>What would you like to do today?</p>
-    <div class="row">
-      <%= link_to "Rent a new place", spaces_path(), class: " btn btn-ghost margin-left=30px " %>
-      <%= link_to "List your place", new_space_path(), class: " btn btn-ghost margin-left=30px " %>
-    </div>
-    </div>
-    <div class="p-2 bd-highlight">
-    <img class="avatar-large flex-column dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://lh3.googleusercontent.com/qt6HS-xCVRYnGGwtEQxEDEyZ61JJAokfVG_EiceGyv6OGBUWlqSqvcrmblb5RWXwCX5SCoPH9KJB9uSUgpxxpsemMSntV7Gg_LXc=w600" />
+<div class="card" id="dashboard-card">
+  <div class="container">
+    <div class="d-flex bd-highlight mb-3 ">
+      <div class="mr-auto p-2 bd-highlight">
+        <div class="d-flex">
+          <div class="p-2 bd-highlight"><img class="avatar-large flex-column dropdown-toggle"
+               id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false" src="https://lh3.googleusercontent.com/qt6HS-xCVRYnGGwtEQxEDEyZ61JJAokfVG_EiceGyv6OGBUWlqSqvcrmblb5RWXwCX5SCoPH9KJB9uSUgpxxpsemMSntV7Gg_LXc=w600" />
+          </div>
+          <h1><%= current_user.first_name %> <%= current_user.last_name[0] %>.</h1>
+        </div>
+          <div class="row">
+            <%#= link_to "List your place", new_space_path(), class: " btn btn-ghost margin-left=30px " %>
+          </div>
+        </div>
+          </div>
+          <div>
+            <h2>First Name: <%= current_user.first_name %></h2>
+            <h2>Last name: <%= current_user.last_name %></h2>
+            <h2>Occupation: <%= current_user.occupation %></h2>
+            <h2>Email: <%= current_user.email %></h2>
+        </div>
     </div>
   </div>
-  <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Rented places</a>
-    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My places</a>
-    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Profile info</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-  <table style="width:100% ">
-      <thead>
-        <tr>
-          <td>Status</td>
-          <td>Start date</td>
-          <td>End date</td>
-          <td>Total price</td>
-          <td></td>
-          <td></td>
-        </tr>
+</div>
 
-      </thead>
-
-      <% @bookings.each do |booking| %>
+<div class="card" id="personal-card">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-bookings" role="tab" aria-controls="nav-home" aria-selected="true">Rented places</a>
+        <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My places</a>
+      </div>
+    </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-bookings" role="tabpanel" aria-labelledby="nav-home-tab">
+    <table style="width:100% ">
+        <thead>
           <tr>
-            <% date_difference = Date.today - booking.start_date %>
-            <td><% if date_difference.to_i < 0  %>
-                  <%= booking.status= "Pending"%>
-                <% else %>
-                  <%= booking.status="Confirmed" %>
-                <% end %>
-            </td>
-            <td><%= booking.start_date %></td>
-            <td><%= booking.end_date %></td>
-            <td><%= booking.space.price * (booking.end_date-booking.start_date) %></td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-              data-whatever="@fat">Leave a Review</button></td>
-            <%= render "partials/new_review", booking: booking %>
-
+            <td>Status</td>
+            <td>Start date</td>
+            <td>End date</td>
+            <td>Total price</td>
           </tr>
-      <% end %>
 
-    </table>
+        </thead>
 
-  </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table style="width:100%" >
-      <thead>
-        <tr>
-          <td>Place</td>
-          <td>Location</td>
-          <td>Price</td>
-          <td></td>
-          <td></td>
-        </tr>
+        <% @bookings.each do |booking| %>
+            <tr>
+              <% date_difference = Date.today - booking.start_date %>
+              <td><% if date_difference.to_i < 0  %>
+                    <%= booking.status= "Pending"%>
+                  <% else %>
+                    <%= booking.status="Confirmed" %>
+                  <% end %>
+              </td>
+              <td><%= booking.start_date.strftime('%d-%m-%Y') %></td>
+              <td><%= booking.end_date.strftime('%d-%m-%Y') %></td>
+              <td><%= booking.space.price * (booking.end_date-booking.start_date) %>€</td>
+              <td><button id="review-button" type="button" class="btn" data-toggle="modal" data-target="#exampleModal"
+                data-whatever="@fat">Leave a Review</button></td>
+              <%= render "partials/new_review", booking: booking %>
 
-      </thead>
+            </tr>
+        <% end %>
 
-      <% @spaces.each do |space| %>
+      </table>
+
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <table style="width:100%" >
+        <thead>
           <tr>
-            <td><%= space.name %></td>
-            <td><%= space.address %></td>
-            <td><%= space.price %></td>
-            <td><%= link_to "X Delete", space_path(space), method: :delete, data: { confirm: "Are you sure you want to delete this?" } %></td>
+            <td>Place</td>
+            <td>Location</td>
+            <td>Price</td>
+            <td></td>
+            <td></td>
           </tr>
-      <% end %>
 
-    </table>
-  </div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <br>
-    <h2>First Name: <%= current_user.first_name %></h2>
-    <h2>Last name: <%= current_user.last_name %></h2>
-    <h2>Occupation: <%= current_user.occupation %></h2>
-    <h2>Email: <%= current_user.email %></h2>
+        </thead>
+
+        <div>
+          <% @spaces.each do |space| %>
+              <tr>
+                <td><%= space.name %></td>
+                <td><%= space.address %></td>
+                <td><%= space.price %></td>
+                <td><%= link_to "X Delete", space_path(space), method: :delete, data: { confirm: "Are you sure you want to delete this?" } %></td>
+              </tr>
+          <% end %>
+        </div>
+
+      </table>
+
   </div>
 </div>
