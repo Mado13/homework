@@ -1,10 +1,14 @@
-<h1>Hello this is your receipt for: <%= @space.name %></h1>
+<div class="container">
+  <div class="card">
+    <h1>Recipt: <%= Faker::Alphanumeric.alphanumeric(number: 10) %></h1>
 
 
-<% total_days = @booking.end_date - @booking.start_date %>
-<p>Price per day: <strong><%= @space.price %></strong> €</p>
-<p>Number of days staying: <strong><%= total_days.to_i %></strong> days</p>
-<% @booking.total_price = @space.price * total_days %>
-<p>Total price of stay: <strong><%= @booking.total_price %></strong> €</p>
+    <% total_days = @booking.end_date - @booking.start_date %>
+    <p>Price per day: <strong><%= @space.price %></strong> €</p>
+    <p>Number of days staying: <strong><%= total_days.to_i %></strong> days</p>
+    <% @booking.total_price = @space.price * total_days %>
+    <p>Total price of stay: <strong><%= @booking.total_price %></strong> €</p>
+  </div>
 
-<%= link_to "<< Back to Spaces", spaces_path(), class: "btn btn-primary" %>
+  <%= link_to "Dashboard", dashboard_path, class: "card-button" %>
+</div>
