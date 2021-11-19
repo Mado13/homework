@@ -1,0 +1,25 @@
+.space-title-show {
+  background-color: #f87060;
+  align-items: center;
+}
+
+.space-description {
+  font-weight: light;
+  font-size: 20px;;
+}
+
+.space-main-pic {
+  height: 100vh;
+}
+
+.pic-container{
+  margin: 100px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.img-carrousel{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
