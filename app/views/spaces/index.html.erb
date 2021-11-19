@@ -15,13 +15,17 @@
       <% @spaces.each do |space| %>
         <div class="grid-item">
           <div class="card">
-            <div style="background-image: url('<%= cl_image_path space.photos.first.key, crop: :fill %>'); background-size: cover; background-position: center; opacity: 0.5" class="card-body-image"></div>
+            <div style="background-image: url('<%= cl_image_path space.photos.first.key, crop: :fill %>'); background-size: cover; margin: 5px; height: 350px; width: auto; border-radius: 5px; background-position: center; opacity: 1" class="card-body-image"></div>
             <div class="d-flex justify-content-between">
               <div>
-                <p><%= link_to space.name, space_path(space) %></p>
-                <p><%= space.price %>€</p>
-                <p><%= space.address %></p>
-                <p>Rating</p>
+                <div class="space-title">
+                  <h3><strong><%= space.name %></strong></h3>
+                </div>
+                <div>
+                  <p><%= space.address %></p>
+                  <p>Rating: <%= space.rating %></p>
+                  <p>Price: <%= space.price %>€</p>
+                </div>
               </div>
               <div class="user-avatar align-content-center"><img src="https://www.allthetests.com/quiz22/picture/pic_1171831236_1.png?1592828498" alt="">
               </div>
@@ -35,6 +39,7 @@
       </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 
 <div class="footer">
@@ -51,3 +56,5 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
 </script>
+=======
+>>>>>>> master
