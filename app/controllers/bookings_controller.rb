@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.space = @space
     if @booking.save
-      redirect_to receipt_path(@space, @booking), notice: "Booking was successful ✨"
+      redirect_to receipt_path(@space, @booking), notice: "Congratulations for booking #{@space.name}"
     else
       render :new
     end
