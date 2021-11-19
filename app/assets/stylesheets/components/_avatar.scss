@@ -3,7 +3,7 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 160px;
+  width: 120px;
   border-radius: 50%;
 }
 .avatar-bordered {
@@ -18,6 +18,7 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
 .bars-1to10{
   background: rgb(238,129,71) !important;
   background: linear-gradient(90deg, rgba(238,129,71,1) 0%, rgba(144,224,0,1) 100%) !important;
@@ -41,4 +42,8 @@
 .br-theme-bars-1to10 .br-widget a.br-active[data-rating-value="5"],
 .br-theme-bars-1to10 .br-widget a.br-selected[data-rating-value="5"] {
     background-color: #f3980e;
+}
+
+.h1-topina{
+  padding: 0;
 }
