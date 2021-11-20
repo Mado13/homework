@@ -53,6 +53,7 @@
                     <%= booking.status="Confirmed" %>
                   <% end %>
               </td>
+              <td><%= booking.space.name %></td>
               <td><%= booking.start_date.strftime('%d-%m-%Y') %></td>
               <td><%= booking.end_date.strftime('%d-%m-%Y') %></td>
               <td><%= booking.space.price * (booking.end_date-booking.start_date) %>€</td>

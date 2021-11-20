@@ -45,6 +45,8 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'nokogiri'
 
+gem 'turbolinks_render'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
