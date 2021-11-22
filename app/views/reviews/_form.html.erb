@@ -8,16 +8,15 @@
         </button>
       </div>
       <div class="modal-body">
-          <%= simple_form_for([ @booking, @review ], url: booking_reviews_path(booking),
+        <%= simple_form_for([ @booking, @review ], url: booking_reviews_path(booking),
                       data: { insert_in_list_target: 'form',
                               action: 'submit->insert-in-list#send' }) do |f| %>
-          <%#= simple_form_for [@booking, @review], remote: true, url: booking_reviews_path(booking), method: "POST" do |f|  %>
-          <div class="form-group">
-            <%= f.text_area :comment, style: "width:90%; border-radius:15px", class: "p-2", placeholder: "Write your review here..." %>
-            <%= f.input :rating, collection: (1..10).to_a, label: "Rate your experience" %>
+        <div class="form-group">
+          <%= f.text_area :comment, style: "width:90%; border-radius:15px", class: "p-2", placeholder: "Write your review here..." %>
+          <%= f.input :rating, collection: (1..10).to_a, label: "Rate your experience" %>
           <%= f.submit "Leave", class: "card-button btn btn-primary align-items-center", style: "  margin: 0 auto" %>
           <% end %>
-          </div>
+        </div>
       </div>
     </div>
   </div>

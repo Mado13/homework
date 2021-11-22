@@ -14,21 +14,6 @@ class SpacesController < ApplicationController
   end
 
   def show
-    @icons = {
-      lock: 'fas fa-lock',
-      monitor: 'fas fa-desktop',
-      mouse: 'fas fa-mouse',
-      keyboard: 'fas fa-keyboard',
-      tea: 'fas fa-mug-hot',
-      parking: 'fas fa-parking',
-      shower: 'fas fa-shower',
-      snacks: 'fas fa-cookie-bite',
-      music: 'fab fa-napster',
-      massage: 'fas fa-spa',
-      peloton: 'fas fa-biking',
-      toaster: 'fas fa-bread-slice',
-      coffee: 'fas fa-coffee'
-    }
     @space = Space.find(params[:id])
     @user = User.find(@space.user_id)
     @markers = @space.geocode.map do

@@ -59,7 +59,7 @@
               <td><%= booking.space.price * (booking.end_date-booking.start_date) %>€</td>
               <td><button id="review-button" type="button" class="btn" data-toggle="modal" data-target="#exampleModal"
                 data-whatever="@fat">Leave a Review</button></td>
-              <%= render "partials/new_review", booking: booking %>
+              <%= render "reviews/form", booking: booking %>
 
             </tr>
         <% end %>

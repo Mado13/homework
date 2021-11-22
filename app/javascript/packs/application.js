@@ -33,3 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initStarRating();
 });
+
+import "controllers"
